@@ -2101,7 +2101,7 @@ local DevilFruit = RenUi:AddTab("Trái Ác Quỷ","7044233235")
 local Shop = RenUi:AddTab("Shop","6031265976")
 local Misc = RenUi:AddTab("Tính năng khác","6034509993")
 --------------------------------------------------------------------
-Main:AddSeperator("Hãy Đăng Ký kênh và Tích chuông để xem các Video về Hack Roblox mới:)")
+Main:AddSeperator("Hãy Follow Kênh TikTok:Thanhtran2005isme để xem các Video về Hack Roblox mới:)")
 Main:AddSeperator("Settings Farm")
 
 Time = Main:AddLabel("Server Time")
