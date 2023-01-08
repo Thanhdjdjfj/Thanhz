@@ -3108,7 +3108,7 @@ end)
 end)
 
 _G.Kill_At = 25
-Main:AddSlider("%HP Cày Thông Thạo",1,100,25,function(value)
+Main:AddToggle("%HP Cày Thông Thạo",20,100,25,function(value)
 _G.Kill_At = value
 end)
 
