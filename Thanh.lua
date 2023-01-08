@@ -2319,7 +2319,7 @@ repeat task.wait()
 EquipWeapon(_G.SelectWeapon)
 AutoHaki()
 PosMon = v.HumanoidRootPart.CFrame
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,40,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 v.HumanoidRootPart.CanCollide = false
 v.Humanoid.WalkSpeed = 0
 v.Head.CanCollide = false
@@ -2338,11 +2338,11 @@ end
 else
 StartMagnet = false
 if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
-topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,40,7))
+topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 else
 if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 15 then
 if PosMon ~= nil then
-topos(PosMon * CFrame.new(5,40,7))
+topos(PosMon * CFrame.new(5,45,7))
 else
 if OldPos ~= nil then
 topos(OldPos.Position)
@@ -2809,7 +2809,7 @@ repeat task.wait()
 if v.Humanoid.Health <= HealthMs then
 AutoHaki()
 EquipWeapon(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 v.HumanoidRootPart.CanCollide = false
 PosMonMasteryFruit = v.HumanoidRootPart.CFrame
 v.Humanoid.WalkSpeed = 0
@@ -2819,7 +2819,7 @@ else
 UseSkill = false
 AutoHaki()
 EquipWeapon(_G.SelectWeapon)
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 v.HumanoidRootPart.CanCollide = false
 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 PosMonMasteryFruit = v.HumanoidRootPart.CFrame
@@ -2843,7 +2843,7 @@ StartMasteryFruitMagnet = false
 UseSkill = false
 local Mob = game:GetService("ReplicatedStorage"):FindFirstChild(Mon)
 if Mob then
-topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,45,7))
 else
 if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y <= 1 then
 game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true
