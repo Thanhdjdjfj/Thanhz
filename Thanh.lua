@@ -2100,6 +2100,7 @@ local Dungeon = RenUi:AddTab("Raid","7044284832")
 local DevilFruit = RenUi:AddTab("Trái Ác Quỷ","7044233235")
 local Shop = RenUi:AddTab("Shop","6031265976")
 local Misc = RenUi:AddTab("Tính năng khác","6034509993")
+local Vip = RenUi:AddTab("Chức Năng Vip","6026568198")
 --------------------------------------------------------------------
 Main:AddSeperator("Hãy Follow Kênh TikTok:Thanhtran2005isme để xem các Video về Hack Roblox mới:)")
 Main:AddSeperator("Settings Farm")
@@ -2318,11 +2319,11 @@ repeat task.wait()
 EquipWeapon(_G.SelectWeapon)
 AutoHaki()
 PosMon = v.HumanoidRootPart.CFrame
-topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(v.HumanoidRootPart.CFrame * CFrame.new(5,50,7))
 v.HumanoidRootPart.CanCollide = false
 v.Humanoid.WalkSpeed = 0
 v.Head.CanCollide = false
-v.HumanoidRootPart.Size = Vector3.new(50,50,200)
+v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 StartMagnet = true
 game:GetService'VirtualUser':CaptureController()
 game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -2337,11 +2338,11 @@ end
 else
 StartMagnet = false
 if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
-topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,50,7))
 else
 if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 15 then
 if PosMon ~= nil then
-topos(PosMon * CFrame.new(5,10,7))
+topos(PosMon * CFrame.new(5,50,7))
 else
 if OldPos ~= nil then
 topos(OldPos.Position)
@@ -3106,8 +3107,8 @@ end
 end)
 end)
 
-_G.Kill_At = 200
-Main:AddSlider("Phạm Vi %",100,100,200,function(value)
+_G.Kill_At = 25
+Main:AddSlider("%HP Cày Thông Thạo",1,100,25,function(value)
 _G.Kill_At = value
 end)
 
@@ -6472,43 +6473,6 @@ Misc:AddButton("Unlock FPS",function()
 setfpscap(100)
 end)
 
-Misc:AddSeperator("ESP")
-
-Misc:AddToggle("ESP Player",false,function(value)
-ESPPlayer = value
-while ESPPlayer do wait()
-UpdateEspPlayer()
-end
-end)
-
-Misc:AddToggle("ESP Chest",false,function(value)
-ChestESP = value
-while ChestESP do wait()
-UpdateChestEsp()
-end
-end)
-
-Misc:AddToggle("ESP Fruit",false,function(value)
-DevilFruitESP = value
-while DevilFruitESP do wait()
-UpdateBfEsp()
-end
-end)
-
-Misc:AddToggle("ESP Flower",false,function(value)
-FlowerESP = value
-while FlowerESP do wait()
-UpdateFlowerEsp()
-end
-end)
-
-Misc:AddToggle("ESP Island",IslandESP,function(value)
-IslandESP = value
-while IslandESP do wait()
-UpdateIslandESP()
-end
-end)
-
 Misc:AddSeperator("Abilities")
 
 Misc:AddToggle("Dodge No Cooldown",false,function(value)
@@ -6533,21 +6497,6 @@ game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
 end
 end
 end)
-end)
-
-Misc:AddToggle("Infinite Ability",false,function(value)
-InfAbility = value
-if value == false then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
-end
-end)
-
-spawn(function()
-while wait() do
-if InfAbility then
-InfAb()
-end
-end
 end)
 
 Misc:AddToggle("Infinite Obversation Range",getgenv().InfiniteObRange,function(value)
@@ -6664,6 +6613,60 @@ if Fly then
 fly()
 end
 end)
+end
+end)
+
+Vip:AddSeperator("Chức Năng Tộc")
+
+Vip:AddToggle("Infinite Ability",false,function(value)
+InfAbility = value
+if value == false then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
+end
+end)
+
+spawn(function()
+while wait() do
+if InfAbility then
+InfAb()
+end
+end
+end)
+
+Vip:AddSeperator("Định Vị")
+
+Vip:AddToggle("Định Vị Người Chơi",false,function(value)
+ESPPlayer = value
+while ESPPlayer do wait()
+UpdateEspPlayer()
+end
+end)
+
+Vip:AddToggle("Định Vị Rương",false,function(value)
+ChestESP = value
+while ChestESP do wait()
+UpdateChestEsp()
+end
+end)
+
+Vip:AddToggle("Định Vị Trái Ác Quỷ",false,function(value)
+DevilFruitESP = value
+while DevilFruitESP do wait()
+UpdateBfEsp()
+end
+end)
+
+Vip:AddToggle("Định Vị Hoa",false,function(value)
+FlowerESP = value
+while FlowerESP do wait()
+UpdateFlowerEsp()
+end
+end)
+
+Vip:AddToggle("Định Vị Đảo",IslandESP,function(value)
+IslandESP = value
+while IslandESP do wait()
+UpdateIslandESP()
 end
 end)
 end
