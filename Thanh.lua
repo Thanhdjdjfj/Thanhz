@@ -3108,7 +3108,22 @@ end)
 end)
 
 _G.Kill_At = 25
-Main:AddToggle("%HP Cày Thông Thạo",20,100,25,function(value)
+Main:AddToggle("Cày Thông Thạo  5%",5,100,25,function(value)
+_G.Kill_At = value
+end)
+
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  10%",10,100,25,function(value)
+_G.Kill_At = value
+end)
+
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  15%",15,100,25,function(value)
+_G.Kill_At = value
+end)
+
+_G.Kill_At = 25
+Main:AddToggle("Cày Thông Thạo  20%",20,100,25,function(value)
 _G.Kill_At = value
 end)
 
