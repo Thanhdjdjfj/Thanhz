@@ -6197,25 +6197,25 @@ game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, goodser
 end
 end)
 
-Misc:AddSeperator("Ui")
+Misc:AddSeperator("Cửa Hàng")
 
 Misc:AddButton("Open Devil Shop",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
 game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
 end)
 
-Misc:AddButton("Open Inventory",function()
+Misc:AddButton("Mở Kho",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
 wait(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Visible = true
 end)
 
-Misc:AddButton("Open Inventory Fruit",function()
+Misc:AddButton("Mở Shop Trái Ác Quỷ",function()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryFruits")
 game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitInventory.Visible = true
 end)
 
-Misc:AddToggle("Highlight Mode",false,function(value)
+Misc:AddToggle("Chế Độ Tối Ưu",false,function(value)
 if value == true then
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = false
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = false
@@ -6243,16 +6243,6 @@ game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = true
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = true
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
 end
-end)
-
-Misc:AddSeperator("Teams")
-
-Misc:AddButton("Join Pirates Team",function()
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates")
-end)
-
-Misc:AddButton("Join Marines Team",function()
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
 
 Misc:AddSeperator("Boost")
@@ -6302,12 +6292,12 @@ end)
 end
 end)
 
-Misc:AddButton("Stop All Tween",function()
+Misc:AddButton("Dừng Tất Cả Tween",function()
 topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 _G.Clip = false
 end)
 
-Misc:AddSeperator("Codes")
+Misc:AddSeperator("Nhập Code")
 
 local x2Code = {
 "3BVISITS",
@@ -6454,18 +6444,7 @@ end
 end)
 end)
 
-Misc:AddToggle("Remove Fog",RemoveFog,function(value)
-RemoveFog = value
-if not RemoveFog then return end
-while RemoveFog do wait()
-game.Lighting.FogEnd = 9e9
-if not RemoveFog then
-game.Lighting.FogEnd = 2500
-end
-end
-end)
-
-Misc:AddButton("Unlock FPS",function()
+Misc:AddButton("Mở Khoá FPS",function()
 setfpscap(100)
 end)
 
@@ -6566,7 +6545,7 @@ end
 end
 end)
 
-Vip:AddButton("Tốc Biến V1 Đang Thử Nghiệm",function()
+Vip:AddButton("Tự Tử .Đang Thử Nghiệm",function()
 game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
 end)
 
@@ -6578,7 +6557,7 @@ tool.RequiresHandle = false
 tool.Name = "Teleport Tool"
 tool.Activated:Connect(function()
 local root = plr.Character.HumanoidRootPart
-local pos = mouse.Hit.Position+Vector3.new(0,2.5,0)
+local pos = mouse.Hit.Position+Vector3.new(0,5,0)
 local offset = pos-root.Position
 root.CFrame = root.CFrame+offset
 end)
@@ -6602,7 +6581,7 @@ if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y <=
 if not game:GetService("Workspace"):FindFirstChild("Water") then
 local Water = Instance.new("Part", game:GetService("Workspace"))
 Water.Name = "Water"
-Water.Size = Vector3.new(15,50,15)
+Water.Size = Vector3.new(15,20,15)
 Water.Anchored = true
 Water.Material = "Neon"
 Water.Color = _G.Color
@@ -6646,6 +6625,27 @@ end
 end
 end)
 end
+end)
+
+Vip:AddToggle("Xoá Sương Mù",RemoveFog,function(value)
+RemoveFog = value
+if not RemoveFog then return end
+while RemoveFog do wait()
+game.Lighting.FogEnd = 9e9
+if not RemoveFog then
+game.Lighting.FogEnd = 2500
+end
+end
+end)
+
+Vip:AddSeperator("Dịch Đến Team")
+
+Vip:AddButton("Team Hải Tặc",function()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates")
+end)
+
+Vip:AddButton("Team Hải Quân",function()
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
 end)
 
 Vip:AddSeperator("Định Vị")
