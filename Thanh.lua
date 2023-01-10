@@ -2082,7 +2082,7 @@ Toggle.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Toggle.Size = UDim2.new(0, 50, 0, 50)
 Toggle.Font = Enum.Font.Code
-Toggle.Text = "TNT"
+Toggle.Text = "THANH"
 Toggle.TextColor3 = Color3.fromRGB(255, 0, 0)
 Toggle.TextScaled = true
 Toggle.MouseButton1Down:connect(function()
@@ -2104,24 +2104,6 @@ local Vip = RenUi:AddTab("Chức Năng Vip","6026568198")
 --------------------------------------------------------------------
 Main:AddSeperator("Hãy Follow Kênh TikTok:Thanhtran2005isme để xem các Video về Hack Roblox mới:)")
 Main:AddSeperator("Settings Farm")
-
-Time = Main:AddLabel("Server Time")
-
-function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Time:Set("Hr(s) : "..Hour.." Min(s) : "..Minute.." Sec(s) : "..Second)
-end
-
-spawn(function()
-while task.wait() do
-pcall(function()
-UpdateTime()
-end)
-end
-end)
 
 Main:AddButton("Remove Sound",function()
 
